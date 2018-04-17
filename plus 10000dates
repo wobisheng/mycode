@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int y,m,d,mouth[13];
+cout << "please input the year: ";
+cin >> y;
+cout << "please input the mouth: ";
+cin >> m;
+cout << "please input the date: ";
+cin >> d;
+mouth[1] = 31;
+mouth[2] = 28;
+mouth[3] = 31;
+mouth[4] = 30;
+mouth[5] = 31;
+mouth[6] = 30;
+mouth[7] = 31;
+mouth[8] = 31;
+mouth[9] = 30;
+mouth[10] = 31;
+mouth[11] = 30;
+mouth[12] = 31;
+for(int a = 1 ; a <= 10000; a ++)
+  {
+   if(y%400==0||(y%4==0&&y%100!=0))
+   {
+   mouth[2] = 29;
+   }
+   else
+   {
+   mouth[2] = 28;
+   }
+   d += 1;
+  if(d==mouth[m])
+   {
+   	d = 1;
+   	m += 1;
+   }
+   if(m==13)
+   {
+   	m = 1;
+   	y += 1;
+   }
+  }
+  cout << "1万天后为" << y << "年" << m << "月" << d << "日"; 
+}
